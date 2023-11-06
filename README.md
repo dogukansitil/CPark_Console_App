@@ -2,6 +2,12 @@
 
 This is a simple parking management system application. The program can keep track of parked cars in the parking lot, allow new car entries, perform car exits, and list existing cars.
 
+## Examples
+![Preview1](https://github.com/dogukansitil/CPark_Console_App/blob/main/Pics/2.png?raw=true)
+![Preview2](https://github.com/dogukansitil/CPark_Console_App/blob/main/Pics/1.png?raw=true)
+![Preview3](https://github.com/dogukansitil/CPark_Console_App/blob/main/Pics/3.png?raw=true)
+![Preview4](https://github.com/dogukansitil/CPark_Console_App/blob/main/Pics/4.png?raw=true)
+
 ## Used Variables
 
 - `adminUsername` and `adminPassword`: User credentials for administrator login.
