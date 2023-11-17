@@ -24,4 +24,24 @@
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\..\AccountData.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="lang\translations_en.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="lang\translations_de.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="lang\translations_es.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="lang\translations_fr.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="lang\translations_tr.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+  </ItemGroup>
 </Project>

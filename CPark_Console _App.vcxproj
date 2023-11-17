@@ -187,6 +187,16 @@
   <ItemGroup>
     <ClInclude Include="CPark.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\..\AccountData.txt">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </Text>
+    <Text Include="lang\translations_de.txt" />
+    <Text Include="lang\translations_en.txt" />
+    <Text Include="lang\translations_es.txt" />
+    <Text Include="lang\translations_fr.txt" />
+    <Text Include="lang\translations_tr.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
