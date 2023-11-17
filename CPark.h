@@ -26,16 +26,16 @@ double HourlyRate = 5.0;
 
 
 struct Accounts {
-    string Username;
-    string Password;
-    string Name;
-    string Surname;
+	string Username;
+	string Password;
+	string Name;
+	string Surname;
 } CurrentAccount;
 
 struct CarPark {
-    bool bIsFull = false;
-    string Plate = "";
-    tm Time;
+	bool bIsFull = false;
+	string Plate = "";
+	tm Time;
 }CurrentCarParks[5][10];
 
 void ShowCarParkList();
@@ -45,50 +45,48 @@ double CalculateParkingFee(const tm* entryTime, const tm* exitTime, double hourl
 
 map<string, string> translations;
 
-
 void LoadTranslations(string currentLanguage) {
-    string translationFilePath = "lang/translations_" + currentLanguage + ".txt";
-    ifstream translationFile(translationFilePath);
+	string translationFilePath = "lang/translations_" + currentLanguage + ".txt";
+	ifstream translationFile(translationFilePath);
 
-    if (!translationFile) {
-        cout << "Translation file not found for language " << currentLanguage << ". Using default (English)." << endl;
-        return;
-    }
+	if (!translationFile) {
+		cout << "Translation file not found for language " << currentLanguage << ". Using default (English)." << endl;
+		return;
+	}
 
-    string line;
-    while (getline(translationFile, line)) {
-        size_t equalSignPos = line.find('=');
-        if (equalSignPos != string::npos) {
-            string key = line.substr(0, equalSignPos);
-            string value = line.substr(equalSignPos + 1);
-            translations[key] = value;
-        }
-    }
+	string line;
+	while (getline(translationFile, line)) {
+		size_t equalSignPos = line.find('=');
+		if (equalSignPos != string::npos) {
+			string key = line.substr(0, equalSignPos);
+			string value = line.substr(equalSignPos + 1);
+			translations[key] = value;
+		}
+	}
 
-    translationFile.close();
+	translationFile.close();
 }
 
-
 string Translate(string text) {
-    
-    auto it = translations.find(text);
-    if (it != translations.end()) {
-        return it->second;
-    }
-    
-    return text;
+
+	auto it = translations.find(text);
+	if (it != translations.end()) {
+		return it->second;
+	}
+
+	return text;
 }
 
 double CalculateParkingFee(tm* const entryTime, tm* const exitTime, double HourlyRate) {
-    
-    time_t entryTimestamp = mktime(entryTime);
-    time_t exitTimestamp = mktime(exitTime);
-    double timeDifference = difftime(exitTimestamp, entryTimestamp);
-    
-    double hours = timeDifference / 3600.0;
 
-    
-    double fee = HourlyRate * ceil(hours);
+	time_t entryTimestamp = mktime(entryTime);
+	time_t exitTimestamp = mktime(exitTime);
+	double timeDifference = difftime(exitTimestamp, entryTimestamp);
 
-    return fee;
+	double hours = timeDifference / 3600.0;
+
+
+	double fee = HourlyRate * ceil(hours);
+
+	return fee;
 }

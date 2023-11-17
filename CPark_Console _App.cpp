@@ -20,7 +20,7 @@ int main() {
 			cout << Translate("database_error");
 			return -1;
 		}
-		
+
 		string Username = "";
 		string Password = "";
 		string ReadingAccount = "";
@@ -28,8 +28,8 @@ int main() {
 		string ReadingPassword = "";
 		string ReadingName = "";
 		string ReadingSurname;
-		
-		
+
+
 
 		cout << Translate("welcome_message") << endl << Translate("enter_credientals") << endl;
 		cout << Translate("enter_username");
@@ -46,13 +46,13 @@ int main() {
 			CurrentAccount.Surname = ReadingSurname;
 			bIsLoggedIn = true;
 			system("CLS");
-			cout << Translate("login_succesfull");
+			cout << Translate("login_successful");
 			Sleep(500);
 			system("CLS");
-			cout << Translate("login_successful") <<".";
+			cout << Translate("login_successful") << ".";
 			Sleep(500);
 			system("CLS");
-			cout << Translate("login_successful") <<".." ;
+			cout << Translate("login_successful") << "..";
 			Sleep(500);
 			system("CLS");
 		}
@@ -250,7 +250,7 @@ void ParkNewCar() {
 				CurrentCarParks[FloorNumber - 1][ParkNumber - 1].bIsFull = true;
 				CurrentCarParks[FloorNumber - 1][ParkNumber - 1].Plate = Plate;
 				system("CLS");
-				cout << Plate << Translate("car") << " "  << FloorNumber << "." << Translate("floor") << ParkNumber << Translate("parked_location") << endl;
+				cout << Plate << Translate("car") << " " << FloorNumber << "." << Translate("floor") << ParkNumber << Translate("parked_location") << endl;
 				Sleep(2500);
 				system("CLS");
 				cout << Translate("wait_main_menu");
@@ -322,7 +322,7 @@ void ParkOutCar() {
 			time_t Now = time(nullptr);
 			tm OutTime;
 			tm* EmptyTime = new tm;
-			
+
 			localtime_s(&OutTime, &Now);
 			int Year = OutTime.tm_year + 1900;
 			int Month = OutTime.tm_mon + 1;
@@ -340,7 +340,7 @@ void ParkOutCar() {
 			cout << Translate("car_entry_date") << InDay << ":" << InMonth << ":" << InYear << " " << InHour << ":" << InMinute << ":" << InSecond << endl;
 			cout << Translate("car_exit_date") << Day << ":" << Month << ":" << Year << " " << Hour << ":" << Minute << ":" << Second << endl;
 			double fee = CalculateParkingFee(&CurrentCarParks[SelectedFloorNumber][SelectedParkNumber].Time, &OutTime, HourlyRate);
-			cout << Translate("price") <<  fee  << Translate("currency");
+			cout << Translate("price") << fee << Translate("currency");
 			CurrentCarParks[SelectedFloorNumber][SelectedParkNumber].bIsFull = false;
 			CurrentCarParks[SelectedFloorNumber][SelectedParkNumber].Plate = "";
 			CurrentCarParks[SelectedFloorNumber][SelectedParkNumber].Time = *EmptyTime;
